@@ -1,9 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggelSidebar } from "../assets/sideBarVisibleSlice";
 
 const Header = () => {
+
+    const dispatch=useDispatch()
+
+    const handleMenuClick=()=>{
+        dispatch(toggelSidebar());
+    }
+
+
     return (
-        <header className="flex p-4 items-center justify-around">
-            <div className="menu justify-self-start">Menu</div>
+        <header className="fixed z-10 bg-white w-full flex p-4 items-center justify-around shadow-md">
+            <div className="menu justify-self-start cursor-pointer" onClick={()=>handleMenuClick()}>Menu</div>
             <div className="youtube-logo">
                 <img
                     src="https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6.jpg"

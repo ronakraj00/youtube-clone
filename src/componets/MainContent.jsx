@@ -1,14 +1,17 @@
-import React from 'react'
-import Sidebar from './Sidebar'
-import VideoContainer from './VideoContainer'
+import React from "react";
+import Sidebar from "./Sidebar";
+import VideoContainer from "./VideoContainer";
+import { useSelector } from "react-redux";
 
 const MainContent = () => {
-  return (
-    <>
-        <Sidebar/>
-        <VideoContainer/>
-    </>
-  )
-}
+    const sideBarVisible = useSelector((store) => store.sidebar.isVisible);
 
-export default MainContent
+    return (
+        <div className="flex pt-20">
+            {sideBarVisible?<Sidebar/>:null}
+            <VideoContainer />
+        </div>
+    );
+};
+
+export default MainContent;
