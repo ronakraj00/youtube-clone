@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     return (
         <div className="sidebar pt-6 shadow-lg  w-60 p-2 bg-white">
             <ul className="p-2">
                 <li className="p-1 px-4 hover:bg-gray-100 border rounded-lg my-1">
-                    Home
+                   <Link to={"/"}> Home</Link>
                 </li>
                 <li className="p-1 px-4 hover:bg-gray-100 border rounded-lg my-1">
                     Shorts

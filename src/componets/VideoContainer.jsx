@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API_URL } from "../assets/constants";
 import VideoCard from "./VideoCard";
+import { Link } from "react-router-dom";
 
 const suggestionTags = [
     "All",
@@ -10,6 +11,8 @@ const suggestionTags = [
     "india",
     "javascript",
     "react",
+    "songs",
+    "css",
 ];
 
 const Tag = ({ text }) => {
@@ -37,7 +40,9 @@ const VideoContainer = () => {
             </div>
             <div className="videos-list flex flex-wrap justify-center">
                 {videos.map((video) => (
-                    <VideoCard key={video.id} video={video} />
+                    <Link to={"watch?v=" + video.id} key={video.id}>
+                        <VideoCard video={video} />
+                    </Link>
                 ))}
             </div>
         </div>

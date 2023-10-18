@@ -4,7 +4,11 @@ const YOUTUBE_VIDEO_API_URL =
     "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
     GOOGLE_API_KEY;
 
-export { GOOGLE_API_KEY, YOUTUBE_VIDEO_API_URL };
+const CHANNEL_BY_ID_API =
+    "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UC_x5XG1OV2P6uZZ5FSM9Ttw&key=" +
+    GOOGLE_API_KEY;
+
+export { GOOGLE_API_KEY, YOUTUBE_VIDEO_API_URL,CHANNEL_BY_ID_API };
 
 const videoData = {
     kind: "youtube#videoListResponse",
